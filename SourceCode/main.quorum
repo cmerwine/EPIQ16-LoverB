@@ -1,0 +1,9 @@
+use Libraries.Robots.Lego.Button
+use Libraries.Robots.Lego.Sound
+use Libraries.Robots.Lego.Screen
+
+Button buttonCtrl
+Sound soundCtrl
+Screen screenCtrl
+
+
