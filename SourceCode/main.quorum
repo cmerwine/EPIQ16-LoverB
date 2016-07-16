@@ -38,6 +38,7 @@ utility:DelayMilliseconds(1250)
 MoveItForward(1000,20)
 utility:DelayMilliseconds(1000)
 MoveItBackward(720, 250, 360)
+WhatUp()
 //SpinIt()
 //StraightenIt()
 //RotateIt(30)
@@ -182,6 +183,8 @@ action RotateIt(integer degrees)
     motor:Wait("C")
 end
 
+action Sunshine
+    
 end
 
 
