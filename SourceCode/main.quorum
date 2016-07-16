@@ -33,6 +33,7 @@ repeat 3 times
     utility:DelayMilliseconds(2000)
 end
 MoveItBackward(720, 250, 360)
+WhatUp()
 utility:DelayMilliseconds(1250)
 MoveItForward(1000,20)
 utility:DelayMilliseconds(1000)
