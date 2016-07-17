@@ -18,28 +18,34 @@ GyroSensor gyro
 
 
 action Main
-
+soundCtrl:SetVolume(10)
 gyro:SetPort(2)
 utility:DelayMilliseconds(12000)
 //MoveItForward(2000, 180)
-MoveItBackward(720, 1000,360)
+MoveItBackward(600, 1000,360)
 //SpinIt()
 //StraightenIt()
 //RotateIt(30)
 WhatUp()
 utility:DelayMilliseconds(2000)
 //repeat 3 times
-    MoveItForward(1000, 20)
+    MoveItForward(600,100, 20)
     utility:DelayMilliseconds(2000)
 //end
-MoveItBackward(720, 250, 360)
+MoveItBackward(600, 250, 360)
 WhatUp()
 utility:DelayMilliseconds(1250)
-MoveItForward(1000,20)
+MoveItForward(720, 100,20)
 utility:DelayMilliseconds(1000)
 MoveItBackward(720, 250, 360)
 WhatUp()
+RotateIt(330)
+utility:DelayMilliseconds(5000)
+RotateIt(-330)
+MoveItForward(360, 100, 20)
 Sunshine(2)
+
+
 //StraightenIt()
 //RotateIt(30)
 
@@ -93,11 +99,11 @@ action WhatUp
     soundCtrl:Buzz()
 end
 
-action MoveItForward(integer milliseconds,integer wheelSpeed)
+action MoveItForward(integer degrees, integer milliseconds,integer wheelSpeed)
     motor:SetSpeed("B", wheelSpeed)
     motor:SetSpeed("C", wheelSpeed)
-    motor:RotateForward("B")
-    motor:RotateForward("C")
+    motor:RotateByDegrees("B", degrees)
+    motor:RotateByDegrees("C", degrees)
     utility:DelayMilliseconds(milliseconds)
 end
 
@@ -184,6 +190,7 @@ action RotateIt(integer degrees)
 end
 
 action Sunshine(integer i)
+    soundCtrl:SetVolume(10)
     soundCtrl:PlayTone(2*261,i*200)
     soundCtrl:PlayTone(2*294,i*200)
     soundCtrl:PlayTone(2*277,i*200)
